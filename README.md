@@ -1,15 +1,18 @@
 regions-topojson
 ================
 
-Extract country regions lightweight topojson from openstreetmap. 
-
 Example with french regions : https://github.com/laem/regions-topojson/blob/master/france/lala.json
 
-Follow these steps to get topojson files for the other countries :
+Follow these steps to get them for other countries :
 
+Run this command...
 ```
 wget www.overpass-api.de/api/interpreter --post-file=my.xml -O my.osm
 ```
+
+...using this my.xml file. 
+
+Just change FR for DE to get german regions for example, and check http://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative to get the 'admin_level' that you need. 
 
 ```
 <osm-script timeout="1000">
@@ -30,11 +33,11 @@ wget www.overpass-api.de/api/interpreter --post-file=my.xml -O my.osm
 ```
 ```
 npm install osmtogeojson
-osmtogeojson my.osm > FR.geojson
+osmtogeojson my.osm > MYREGIONS.geojson
 ```
 You can stop here and use geojson, but files will be huge. Simplify them with topojson :
 
 ```
 npm install topojson
-topojson -o lala.json FR.geojson -q 10000 --simplify-proportion 0.02 -p
+topojson -o lala.json MYREGIONS.geojson -q 10000 --simplify-proportion 0.02 -p
 ```
