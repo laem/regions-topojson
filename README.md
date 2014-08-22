@@ -1,7 +1,9 @@
 regions-topojson
 ================
 
-Extract country regions lightweight topojson from openstreetmap. Example with french regions.
+Extract country regions lightweight topojson from openstreetmap. 
+
+Example with french regions : https://github.com/laem/regions-topojson/blob/master/france/lala.json
 
 Follow these steps to get topojson files for the other countries :
 
