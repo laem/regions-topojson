@@ -31,6 +31,16 @@ Just change FR for DE to get german regions for example, and check http://wiki.o
   <print mode="skeleton" order="quadtile"/>
 </osm-script>
 ```
+
+Unfortunately, not all country regions on OSM are marked with the ISO3166-2 attribute. E.g. English regions will have to be retrieved using this query lines instead : 
+
+```
+<has-kv k="admin_level" v="5"/>
+<has-kv k="ref:nuts:1" regv="UK"/>
+```
+
+Then : 
+
 ```
 npm install osmtogeojson
 osmtogeojson my.osm > MYREGIONS.geojson
