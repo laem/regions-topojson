@@ -51,3 +51,6 @@ You can stop here and use geojson, but files will be huge. Simplify them with to
 npm install topojson
 topojson -o lala.json MYREGIONS.geojson -q 10000 --simplify-proportion 0.02 -p
 ```
+
+
+Developed for [qunb.com](https://www.qunb.com)
